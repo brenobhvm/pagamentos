@@ -1,0 +1,30 @@
+<div class="col-xs-12">
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Nome</th>
+				<th>Valor</th>
+				<th>Status</th>
+				<th>Ações</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="debit in bcCtrl.billingCycle.debits">
+				<td>
+					<input ng-model="debit.name" class="form-control" placeholder="Informe o Nome" ng-readonly="bcCtrl.tabDelete" />
+				</td>
+				<td>
+					<input ng-model="debit.value" ng-change="bcCtrl.calculateValues()" class="form-control" placeholder="Informe o Valor" ng-readonly="bcCtrl.tabDelete" type="number"/>
+				</td>
+				<td>
+					<input ng-model="debit.status" class="form-control" placeholder="Informe o Status" ng-readonly="bcCtrl.tabDelete"/>
+				</td>
+				<td class="table-actions">
+					<button class="btn btn-success" ng-disabled="bcCtrl.tabDelete" ng-click="bcCtrl.addDebit($index)"><i class="fa fa-plus"></i></button>
+					<button class="btn btn-warning" ng-disabled="bcCtrl.tabDelete"><i class="fa fa-clone" ng-click="bcCtrl.cloneDebit($index, debit)"></i></button>
+					<button class="btn btn-danger" ng-disabled="bcCtrl.tabDelete" ng-click="bcCtrl.deleteDebit($index)"><i class="fa fa-trash-o"></i></button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
