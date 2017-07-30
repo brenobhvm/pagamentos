@@ -9,7 +9,8 @@
 
 	function BillingCycleController($http, $location, msgs, tabs) {
 		const vm = this;
-		const url = 'http://localhost:3003/api/billingCycles';
+		//const url = 'http://localhost:3003/api/billingCycles';
+		const url = 'http://198.199.82.235:3003/api/billingCycles';
 
 		vm.refresh = function() {
 			const page = parseInt($location.search().page) || 1;
