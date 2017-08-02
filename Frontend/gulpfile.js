@@ -7,7 +7,7 @@ require('./gulpTasks/server');
 
 gulp.task('default', function(){
 	if(util.env.production){
-		gulp.start('deps', 'app');
+		gulp.start('deps', 'app', 'serverProd');
 	} else{
 		gulp.start('deps', 'app', 'server');
 	}

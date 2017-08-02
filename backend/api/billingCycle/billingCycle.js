@@ -23,19 +23,4 @@ const billingCycleSchema = new mongoose.Schema({
 	debits: [debitSchema]
 });
 
-//Teste para verificar update
-/*
-var generateMatcherUpdate= function(next, req) {
-    //var matcher = "generate matcher function"
-    //this.update({matcher: matcher});
-//console.log(req);
-var query = this.getQuery();  // contains id
-  var update = this.getUpdate();
-console.log(update);
-    next();
-};
-
-billingCycleSchema.pre('findOneAndUpdate', generateMatcherUpdate);
-*/
-
 module.exports = restful.model('BillingCycle', billingCycleSchema);

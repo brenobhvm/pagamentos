@@ -1,3 +1,4 @@
+#!/usr/bin/env nodejs
 const port = 3003;
 
 const bodyParser = require('body-parser');

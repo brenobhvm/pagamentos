@@ -4,7 +4,7 @@ const _ = require('lodash');
 BillingCycle.methods(['get', 'post', 'put', 'delete']);
 BillingCycle.updateOptions({new: true, runValidators: true});
 
-BillingCycle.before('get', function(req, res, next){req.query.userId = req.decoded.id; req.query.populate = 'userId';next();});
+BillingCycle.before('get', function(req, res, next){req.query.userId = req.decoded.id; /*req.query.populate = 'userId';*/next();});
 BillingCycle.before('post', addIdUser).before('put', verifyUpdate);
 
 BillingCycle.after('post', sendErrorOrNext).after('put', sendErrorOrNext);
@@ -57,11 +57,6 @@ function parseErrors(nodeRestfulErrors){
 };
 
 BillingCycle.route('count', function(req, res, next){
-	/*
-	BillingCycle.count({userId: req.decoded.id}, function(err, c) {
-        console.log('Count is ' + c);
-    });
-	*/
 	BillingCycle.count({userId: req.decoded.id}, function(error, value){
 		if(error){
 			res.status(500).json({errors: [error]});

@@ -7,7 +7,8 @@
 	function DashboardController($http){
 		const vm = this;
 		vm.getSummary = function(){
-			const url = 'http://localhost:3003/api/billingSummary';
+			//const url = 'http://localhost:3003/api/billingSummary';
+			const url = 'http://162.243.167.154:3003/api/billingSummary';
 			$http.get(url).then(function(response){
 				const {credit = 0, debit = 0} = response.data;
 				vm.credit = credit;

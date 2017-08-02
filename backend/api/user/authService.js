@@ -22,7 +22,9 @@ const login = (req, res, next) => {
 	  		expiresIn: "1 day"
 			//expiresIn: "10 seconds"
 	  	})
-	  	const { name, email } = user;
+	  	//const { name, email } = user;
+			const name = user.name;
+			const email = user.email;
 	  	res.json({ name, email, token });
 	  } else {
 	  	return res.status(400).send({errors: ['Usuário/Senha inválidos']});
